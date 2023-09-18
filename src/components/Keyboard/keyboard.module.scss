@@ -15,6 +15,7 @@
     width: 570px;
     margin: 0 auto;
     gap: 5px;
+    justify-content: center
 }
 
 .key {
@@ -36,4 +37,10 @@
     @include keybase;
     width: 80px;
     height: 70px;
+}
+
+@media (max-width: 600px) {
+    .keyboarContainer {
+        display: none;
+    }
 }

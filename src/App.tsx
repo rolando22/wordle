@@ -1,7 +1,7 @@
 import { CompletedRow, CurrentRow, EmptyRow, Keyboard, Modal } from './components';
 import { useWordle } from './hooks/useWordle';
 import { GameStatus } from './types';
-import './App.css';
+import styles from  './App.module.scss';
 
 export function App() {
     const { 
@@ -31,7 +31,7 @@ export function App() {
                         onReset={onReset} 
                     />
                     : null}
-            <main>
+            <main className={styles.mainContainer}>
                 {completeWords.map((word, index) => 
                     <CompletedRow 
                         key={index} 
