@@ -83,6 +83,14 @@ export function useWordle() {
         setCurrentWord('');
     };
 
+    const onReset = () => {
+        setWordOfTheDay(getWord());
+        setTurn(1);
+        setCurrentWord('');
+        setCompletedWords([]);
+        setGameStatus(GameStatus.Playing);
+    };
+
     return {
         wordOftheDay,
         currentWord,
@@ -90,5 +98,6 @@ export function useWordle() {
         turn,
         gameStatus,
         onKeyPressed, 
+        onReset, 
     };
 }
