@@ -89,5 +89,6 @@ export function useWordle() {
         completeWords,
         turn,
         gameStatus,
+        onKeyPressed, 
     };
 }

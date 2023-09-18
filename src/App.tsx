@@ -1,4 +1,4 @@
-import { CompletedRow, CurrentRow, EmptyRow } from './components';
+import { CompletedRow, CurrentRow, EmptyRow, Keyboard } from './components';
 import { useWordle } from './hooks/useWordle';
 import { GameStatus } from './types';
 import './App.css';
@@ -10,6 +10,7 @@ export function App() {
         completeWords,
         turn,
         gameStatus, 
+        onKeyPressed, 
     } = useWordle();
 
     return (
@@ -27,6 +28,7 @@ export function App() {
             {Array.from(Array(6 - turn)).map((_, index) => 
                 <EmptyRow key={index} />
             )}
+            <Keyboard onKeyPressed={onKeyPressed}/>
         </main>
     );
 }
