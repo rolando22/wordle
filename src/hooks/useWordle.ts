@@ -59,7 +59,7 @@ export function useWordle() {
         setCurrentWord(newWord);
     };
 
-    const onEnter = () => {
+    const onEnter = async () => {
         if (currentWord === wordOftheDay) {
             setCompletedWords([...completeWords, currentWord]);
             setGameStatus(GameStatus.Won);
@@ -72,7 +72,7 @@ export function useWordle() {
             return;
         }
 
-        const validWord = isValidWord(currentWord);
+        const validWord = await isValidWord(currentWord);
         if (currentWord.length === 5 && !validWord) {
             alert('Not a valid word');
             return;

@@ -9,9 +9,19 @@ export function getWord() {
     return word.toUpperCase();
 }
 
-export function isValidWord(word: string) {
-    const words = getWords();
-    return words.includes(word.toLowerCase());
+export async function isValidWord(word: string) {
+    try {
+        const URL = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`;
+        const response = await fetch(URL);
+        if (response.status !== 200) throw new Error("Request Failed");
+        const json = await response.json();
+        return json.length;
+      } catch (e) {
+        console.log(e);
+        return false;
+      }
+    // const words = getWords();
+    // return words.includes(word.toLowerCase());
 }
 
 function getWordRandom() {
