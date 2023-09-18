@@ -1,4 +1,4 @@
-import { CompletedRow, EmptyRow } from './components';
+import { CompletedRow, CurrentRow, EmptyRow } from './components';
 import './App.css';
 
 export function App() {
@@ -7,7 +7,7 @@ export function App() {
             <CompletedRow word='break' solution='sower' />
             <CompletedRow word='break' solution='sower' />
             <CompletedRow word='break' solution='sower' />
-            <EmptyRow />
+            <CurrentRow word='bre' />
             <EmptyRow />
             <EmptyRow />
         </main>
